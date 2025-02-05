@@ -4,6 +4,8 @@ const nameInput = document.querySelector(".parts-info__form input:first-child");
 const nameList = document.querySelector(".parts-info__list");
 const totalNum = document.querySelector(".parts-info__number");
 const NAME_KEY = "Modori members";
+
+let closeBtns = document.querySelectorAll(".parts-info__close-btn");
 let toSaveNewName = [];
 
 const savedName = localStorage.getItem(NAME_KEY);
@@ -32,6 +34,9 @@ function paintName(enteredName) {
   newName.innerText = enteredName;
   newBtn.classList.add("parts-info__close-btn");
   newBtn.innerText = "X";
+
+  closeBtns = document.querySelectorAll(".parts-info__close-btn");
+  closeBtnsEventListen(closeBtns);
   // newCloseBtn.innerText = "X";
 }
 
@@ -51,7 +56,6 @@ nameAddForm.addEventListener("submit", (event) => {
 });
 
 // 2. Delete participants
-let closeBtns = document.querySelectorAll(".parts-info__close-btn");
 
 function handleDelete(event) {
   const deleteElement = event.target.parentNode;
@@ -63,10 +67,14 @@ function handleDelete(event) {
   countNumber();
 }
 
-if (savedName !== null) {
-  closeBtns.forEach((btn) => {
+function closeBtnsEventListen(elementList) {
+  elementList.forEach((btn) => {
     btn.addEventListener("click", handleDelete);
   });
+}
+
+if (savedName !== null) {
+  closeBtnsEventListen(closeBtns);
 }
 
 // 3. Number of participants
