@@ -10,7 +10,7 @@
   <body>
     <main class="main-screen">
       <div class="parts-info">
-        <div class="parts-info__row">
+        <div class="parts-info__row row">
           <div class="parts-info__title">
             <h2>랜덤 참여자</h2>
           </div>
@@ -19,12 +19,63 @@
             <input type="submit" value="추가" />
           </form>
         </div>
-        <div class="parts-info__row">
+        <div class="parts-info__row row">
           <ul class="parts-info__list"></ul>
         </div>
-        <form class="parts-info__row">
+        <form class="parts-info__row row">
           <span class="parts-info__number">n 명</span>
         </form>
+      </div>
+      <div class="random-seats">
+        <div class="random-seats__row row">
+          <div class="random-seats__title">
+            <h2>자리배정</h2>
+          </div>
+          <form class="random-seats__form">
+            <input type="submit" value="Play" />
+          </form>
+        </div>
+        <div class="random-seats__row row">
+          <h4>입구 방향</h4>
+        </div>
+        <div class="random-seats__row row">
+          <div class="random-seats__column">
+            <div class="random-seats__row-in-column">
+              <div class="random-seats__seat"></div>
+              <div class="random-seats__seat"></div>
+              <div class="random-seats__seat"></div>
+            </div>
+            <div class="random-seats__row-in-column">
+              <div class="random-seats__seat"></div>
+              <div class="random-seats__seat"></div>
+              <div class="random-seats__seat"></div>
+            </div>
+          </div>
+          <div class="random-seats__column">
+            <div class="random-seats__row-in-column">
+              <div class="random-seats__seat"></div>
+              <div class="random-seats__seat"></div>
+            </div>
+            <div class="random-seats__row-in-column">
+              <div class="random-seats__seat"></div>
+              <div class="random-seats__seat"></div>
+            </div>
+          </div>
+        </div>
+        <div class="random-seats__row row">
+          <div class="random-seats__column">
+            <div class="random-seats__row-in-column">
+              <div class="random-seats__seat"></div>
+              <div class="random-seats__seat"></div>
+              <div class="random-seats__seat"></div>
+            </div>
+            <div class="random-seats__row-in-column">
+              <div class="random-seats__seat"></div>
+              <div class="random-seats__seat"></div>
+              <div class="random-seats__seat"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <script src="main.js"></script>

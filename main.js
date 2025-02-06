@@ -3,6 +3,7 @@ const nameAddForm = document.querySelector(".parts-info__form");
 const nameInput = document.querySelector(".parts-info__form input:first-child");
 const nameList = document.querySelector(".parts-info__list");
 const totalNum = document.querySelector(".parts-info__number");
+const playBtnForm = document.querySelector(".random-seats__form");
 const NAME_KEY = "Modori members";
 
 let closeBtns = document.querySelectorAll(".parts-info__close-btn");
@@ -56,7 +57,6 @@ nameAddForm.addEventListener("submit", (event) => {
 });
 
 // 2. Delete participants
-
 function handleDelete(event) {
   const deleteElement = event.target.parentNode;
   const deleteName = event.target.parentNode.childNodes[0].innerText;
@@ -84,9 +84,48 @@ function countNumber() {
 
 //  4. Play Random seats
 
-// function handleRandomBtn(event) {
-//   if (savedName === null) {
-//     alert("이름을 먼저 추가하세요!")
-//   } else {
-//  }
-//}
+const seats = document.querySelectorAll(".random-seats__seat");
+
+function paintRandomSeats(seats, nameList) {
+  console.log("paint start!");
+  let seatNum = 0;
+  nameList.forEach((ownerName) => {
+    const seat = seats[seatNum];
+    if (seat.childNodes.length === 0) {
+      console.log("there is no data in localstorage!");
+      console.log(`${ownerName}`);
+      const newOwner = document.createElement("span");
+      seat.appendChild(newOwner);
+      newOwner.innerText = ownerName;
+    } else {
+      console.log("there is existing data in localstorage!");
+      console.log(`${ownerName}`);
+      seat.childNodes[0].innerHTML = ownerName;
+    }
+
+    seatNum++;
+  });
+}
+
+function shuffle(arr) {
+  console.log("Shuffle start!");
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  // temp
+  console.log(arr);
+  //
+  paintRandomSeats(seats, arr);
+}
+
+function handleRandomBtn(e) {
+  e.preventDefault();
+  if (toSaveNewName.length === 0) {
+    alert("참여자 명단을 먼저 작성해주세요!");
+  } else {
+    shuffle(toSaveNewName);
+  }
+}
+
+playBtnForm.addEventListener("click", handleRandomBtn);
