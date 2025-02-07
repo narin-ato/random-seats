@@ -1,0 +1,14 @@
+{
+  "name": "random-seats",
+  "version": "1.0.0",
+  "description": "This is a program to set seats randomly. Our company changes seats quarterly.",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

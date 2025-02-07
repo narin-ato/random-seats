@@ -86,27 +86,6 @@ function countNumber() {
 
 const seats = document.querySelectorAll(".random-seats__seat");
 
-// function paintRandomSeats(seats, nameList) {
-//   console.log("paint start!");
-//   let seatNum = 0;
-//   nameList.forEach((ownerName) => {
-//     const seat = seats[seatNum];
-//     if (seat.childNodes.length === 0) {
-//       console.log("there is no data in localstorage!");
-//       console.log(`${ownerName}`);
-//       const newOwner = document.createElement("span");
-//       seat.appendChild(newOwner);
-//       newOwner.innerText = ownerName;
-//     } else {
-//       console.log("there is existing data in localstorage!");
-//       console.log(`${ownerName}`);
-//       seat.childNodes[0].innerHTML = ownerName;
-//     }
-
-//     seatNum++;
-//   });
-// }
-
 function seatNumCheck(seats, nameList) {
   const seatsCount = seats.length;
   const nameCount = nameList.length;
